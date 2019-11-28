@@ -1,0 +1,38 @@
+html {
+    background: #3ee6cfd2;
+}
+
+body {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.title {
+    color: black;
+    font-family: 'Calistoga', cursive;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container {
+    display: grid;
+    height: 640px;
+    width: 640px;
+    border-style: solid;
+    border-color: black;
+    margin: 0 auto;
+}
+
+.grid {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 1px solid #000;
+    display: inline-block;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 15px;
+}
