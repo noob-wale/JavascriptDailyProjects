@@ -17,6 +17,7 @@ body {
 }
 
 .clock {
+    background: radial-gradient(rgb(0,143,104), rgb(250,224,66));
     width: 30rem;
     height: 30rem;
     border: 15px solid white;
@@ -29,11 +30,11 @@ body {
 -moz-box-shadow: 4px -15px 55px 0px rgba(101,210,152,0.74) inset;
 }
 
-.clock-1 {
+/* .clock-1 {
     border: 10px solid;
     border-radius: 50%;
     border-image: radial-gradient(rgb(0,143,104), rgb(250,224,66)) 1;
-}
+} */
 
 .clock-face {
     position: relative;
