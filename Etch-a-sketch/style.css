@@ -17,20 +17,20 @@ body {
 
 .container {
     display: grid;
-    height: 640px;
-    width: 640px;
+    height: 500px;
+    width: 500px;
     border-style: solid;
     border-color: black;
     margin: 0 auto;
 }
 
-.grid {
+/* .grid {
     margin: 0;
     padding: 0;
     border: none;
     outline: 1px solid #000;
     display: inline-block;
-}
+} */
 
 .buttons {
     text-align: center;
