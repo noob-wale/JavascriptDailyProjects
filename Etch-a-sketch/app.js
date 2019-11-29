@@ -47,10 +47,7 @@ function resizeGrid() {
     CELL.forEach((cl) => {
         cl.remove();
     })
-    let input = prompt("How big would you like the grid? MAX 100!");
-    if (input > 100) {
-        alert("Err!!! Max 100!!!");
-    };
+    let input = Number(prompt("How big would you like the grid? MAX 100!"));
     createGrid(input);
     paintCell();
 };
@@ -91,21 +88,11 @@ function paintCellColor() {
     });
 };
 
-BLACK.addEventListener('click', (e) => {
-    paintCell();
-});
-CLEAR.addEventListener('click', (e) => {
-    clearCell();
-});
-RESIZE.addEventListener('click', (e) => {
-    resizeGrid();
-});
-RUBBER.addEventListener('click', (e) => {
-    eraseCells()
-});
-RANDOM.addEventListener('click', (e) => {
-    paintCellColor()
-})
+BLACK.addEventListener('click', paintCell);
+CLEAR.addEventListener('click', clearCell);
+RESIZE.addEventListener('click', resizeGrid);
+RUBBER.addEventListener('click', eraseCells);
+RANDOM.addEventListener('click', paintCellColor);
 
 
 createGrid(16);
