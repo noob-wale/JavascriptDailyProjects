@@ -2,6 +2,8 @@ const CONTAINER = document.querySelector(".container");
 const BLACK = document.querySelector(".black");
 const CLEAR = document.querySelector(".clear");
 const RESIZE = document.querySelector(".resize");
+const RUBBER = document.querySelector(".rubber");
+const RANDOM = document.querySelector(".random-color")
 
 
 function createGrid(x) {
@@ -53,7 +55,41 @@ function resizeGrid() {
     paintCell();
 };
 
+function eraseCells() {
+    const CELL = document.querySelectorAll('.grid');
+    CELL.forEach( (cl) => {
+        cl.addEventListener('mouseover', (e) => {
+            if(e.buttons === 1 || e.buttons === 3){
+                let rubber = 255;
+                cl.style.backgroundColor = `rgba(${rubber},${rubber},${rubber})`;
+            };
+        });
+        cl.addEventListener('mouseenter', (e) => {
+            let rubber = 255;
+            cl.style.backgroundColor = `rgba(${rubber},${rubber},${rubber})`;
+        })
+    });
+};
 
+function paintCellColor() {
+    const CELL = document.querySelectorAll('.grid');
+    CELL.forEach( (cl) => {
+        cl.addEventListener('mouseover', (e) => {
+            if(e.buttons === 1 || e.buttons === 3){
+                let hex1 = Math.floor(Math.random() * 256);
+                let hex2 = Math.floor(Math.random() * 256);
+                let hex3 = Math.floor(Math.random() * 256);
+                cl.style.backgroundColor = `rgba(${hex1},${hex2},${hex3})`;
+            };
+        });
+        cl.addEventListener('mouseenter', (e) => {
+            let hex1 = Math.floor(Math.random() * 256);
+            let hex2 = Math.floor(Math.random() * 256);
+            let hex3 = Math.floor(Math.random() * 256);
+            cl.style.backgroundColor = `rgba(${hex1},${hex2},${hex3})`;
+        })
+    });
+};
 
 BLACK.addEventListener('click', (e) => {
     paintCell();
@@ -64,7 +100,13 @@ CLEAR.addEventListener('click', (e) => {
 RESIZE.addEventListener('click', (e) => {
     resizeGrid();
 });
+RUBBER.addEventListener('click', (e) => {
+    eraseCells()
+});
+RANDOM.addEventListener('click', (e) => {
+    paintCellColor()
+})
 
 
 createGrid(16);
-paintCell();
+// paintCell();
